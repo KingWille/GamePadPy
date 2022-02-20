@@ -1,3 +1,3 @@
 from gpiozero import Button
 
-Button = button(27)
+button = Button(27)
