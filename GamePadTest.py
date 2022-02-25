@@ -97,34 +97,34 @@ while True:
   if 300 <= vrx_pos <= 700:
    adc_x_up = False
    adc_x_down = False
-   GPIO.OUT(2, 0)
-   GPIO.OUT(3, 0)  
+   GPIO.output(2, 0)
+   GPIO.output(3, 0)  
   elif vrx_pos > 700:
    adc_x_up = True
    adc_x_down = False
-   GPIO.OUT(2, 1)
-   GPIO.OUT(3, 0)  
+   GPIO.output(2, 1)
+   GPIO.output(3, 0)  
   elif vrx_pos < 300:
    adc_x_up = False
    adc_x_down = True
-   GPIO.OUT(2, 0)  
-   GPIO.OUT(3, 1)  
+   GPIO.output(2, 0)  
+   GPIO.output(3, 1)  
 
   if 300 <= vry_pos <= 700:
    adc_y_up = False
    adc_y_down = False
-   GPIO.OUT(5, 0) 
-   GPIO.OUT(6, 0)  
+   GPIO.output(5, 0) 
+   GPIO.output(6, 0)  
   elif vry_pos > 700:
    adc_y_up = True
    adc_y_down = False
-   GPIO.OUT(5, 1)
-   GPIO.OUT(6, 0)  
+   GPIO.output(5, 1)
+   GPIO.output(6, 0)  
   elif vry_pos <= 300:
    adc_y_up = False
    adc_y_down = True
-   GPIO.OUT(6, 1) 
-   GPIO.OUT(5, 0)  
+   GPIO.output(6, 1) 
+   GPIO.output(5, 0)  
 
 
 
