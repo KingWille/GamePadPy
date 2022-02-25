@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 import subprocess
 import signal, sys
 
-spi = spidev.Spidev()
+spi = spidev.SpiDev()
 spi.open(0.0)
 spi.max_speed_hz = 50000
 
