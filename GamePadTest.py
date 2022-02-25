@@ -7,7 +7,7 @@ import subprocess
 import signal, sys
 
 spi = spidev.SpiDev()
-spi.open(0.0)
+spi.open(0, 0)
 spi.max_speed_hz = 50000
 
 def ReadChannel(channel):
