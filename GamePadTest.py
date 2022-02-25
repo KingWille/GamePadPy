@@ -48,11 +48,6 @@ GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP) #SELECT
 GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_UP) #RSB
 GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP) #LSB
 
-#Joystick kontroller
-GPIO.setup(2, GPIO.OUT)#höger
-GPIO.setup(3, GPIO.OUT)#vänster
-GPIO.setup(5, GPIO.OUT)#y upp
-GPIO.setup(6, GPIO.OUT)#y ner
 
 #subprocess.call(["sudo", "shutdown", "-h","now"])
 
@@ -97,30 +92,28 @@ while True:
   if 300 <= vrx_pos <= 700:
    adc_x_up = False
    adc_x_down = False 
+   print (vrx_pos)
   elif vrx_pos > 700:
    adc_x_up = True
    adc_x_down = False
-   GPIO.output(2, 1)
-   GPIO.output(3, 0)  
+   print (vrx_pos)
   elif vrx_pos < 300:
    adc_x_up = False
    adc_x_down = True
-   GPIO.output(2, 0)  
-   GPIO.output(3, 1)  
+   print (vrx_pos)
 
   if 300 <= vry_pos <= 700:
    adc_y_up = False
    adc_y_down = False
+   print (vry_pos) 
   elif vry_pos > 700:
    adc_y_up = True
    adc_y_down = False
-   GPIO.output(5, 1)
-   GPIO.output(6, 0)  
+   print (vry_pos)  
   elif vry_pos <= 300:
    adc_y_up = False
-   adc_y_down = True
-   GPIO.output(6, 1) 
-   GPIO.output(5, 0)  
+   adc_y_down = True 
+   print (vry_pos)  
 
 
 
