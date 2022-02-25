@@ -8,6 +8,7 @@ import signal, sys
 
 spi = spidev.Spidev()
 spi.open(0.0)
+spi.max_speed_hz = 50000
 
 def ReadChannel(channel):
     adc = spi.xfer2([1,(8+channel)<<4,0])
