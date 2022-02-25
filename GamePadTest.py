@@ -49,10 +49,10 @@ GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_UP) #RSB
 GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP) #LSB
 
 #Joystick kontroller
-GPIO.setup(2, GPIO.OUT, pull_up_down=GPIO.PUD_UP)#höger
-GPIO.setup(3, GPIO.OUT, pull_up_down=GPIO.PUD_UP)#vänster
-GPIO.setup(5, GPIO.OUT, pull_up_down=GPIO.PUD_UP)#y upp
-GPIO.setup(6, GPIO.OUT, pull_up_down=GPIO.PUD_UP)#y ner
+GPIO.setup(2, GPIO.OUT)#höger
+GPIO.setup(3, GPIO.OUT)#vänster
+GPIO.setup(5, GPIO.OUT)#y upp
+GPIO.setup(6, GPIO.OUT)#y ner
 
 #subprocess.call(["sudo", "shutdown", "-h","now"])
 
