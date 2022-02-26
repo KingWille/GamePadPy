@@ -130,18 +130,18 @@ while True:
   if (not js0ys) and adc_y_up:  # Fire button pressed
     js0ys = True
     #print("js0 y up")
-    device.emit(uinput.KEY_UP, 1) # Press Left Ctrl key
+    device.emit(uinput.KEY_DOWN, 1) # Press Left Ctrl key
   elif js0ys and (not adc_y_up):  # Fire button released
     js0ys = False
-    device.emit(uinput.KEY_UP, 0) # Release Left Ctrl key
+    device.emit(uinput.KEY_DOWN, 0) # Release Left Ctrl key
     #print("js0 y up release")
   elif (not js0y) and adc_y_down:  # Fire button pressed
     js0y = True
     #print("js0 y down")
-    device.emit(uinput.KEY_DOWN, 1) # Press Left Ctrl key
+    device.emit(uinput.KEY_UP, 1) # Press Left Ctrl key
   elif js0y and (not adc_y_down):  # Fire button released
     js0y = False
-    device.emit(uinput.KEY_DOWN, 0) # Release Left Ctrl key
+    device.emit(uinput.KEY_UP, 0) # Release Left Ctrl key
     #print("js0 y down release")
 
 
