@@ -94,28 +94,22 @@ while True:
   if 300 <= vrx_pos <= 700:
    adc_x_up = False
    adc_x_down = False 
-   print (vrx_pos)
   elif vrx_pos > 700:
    adc_x_up = True
    adc_x_down = False
-   print (vrx_pos)
   elif vrx_pos < 300:
    adc_x_up = False
    adc_x_down = True
-   print (vrx_pos)
 
   if 300 <= vry_pos <= 700:
    adc_y_up = False
    adc_y_down = False
-   print (vry_pos) 
   elif vry_pos > 700:
    adc_y_up = True
    adc_y_down = False
-   print (vry_pos)  
   elif vry_pos <= 300:
    adc_y_up = False
-   adc_y_down = True 
-   print (vry_pos)  
+   adc_y_down = True   
 
 
 
