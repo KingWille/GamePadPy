@@ -19,14 +19,12 @@ swt_channel = 0
 vrx_channel = 1
 vry_channel = 2
 
-# Read the joystick position data
-vrx_pos = ReadChannel(vrx_channel)
-vry_pos = ReadChannel(vry_channel)
+
  
 # Read switch state
 swt_val = ReadChannel(swt_channel)
 
-def signal_handler(signal, frame):
+def signal_handler(signal, frame)
         print ('Grattis, vi ses')
         sys.exit(0)
 signal.signal(signal.SIGINT, signal_handler)
@@ -88,6 +86,10 @@ rsb = False
 lsb = False
 
 while True:
+    
+  # Read the joystick position data
+  vrx_pos = ReadChannel(vrx_channel)
+  vry_pos = ReadChannel(vry_channel)
 
   if 300 <= vrx_pos <= 700:
    adc_x_up = False
