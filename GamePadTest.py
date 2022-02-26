@@ -24,7 +24,7 @@ vry_channel = 2
 # Read switch state
 swt_val = ReadChannel(swt_channel)
 
-def signal_handler(signal, frame)
+def signal_handler(signal, frame):
         print ('Grattis, vi ses')
         sys.exit(0)
 signal.signal(signal.SIGINT, signal_handler)
