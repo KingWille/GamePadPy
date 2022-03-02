@@ -113,8 +113,8 @@ while True:
   # Read the joystick position data
   vrx_pos = ReadChannel(vrx_channel)
   vry_pos = ReadChannel(vry_channel)
-  vrx1_pos = ReadChannel(vrx1_channel)
-  vry1_pos = ReadChannel(vry1_channel)
+  vrx1_pos = ReadChannel(vrx_channel1)
+  vry1_pos = ReadChannel(vry_channel1)
 
   if 300 <= vrx_pos <= 700:
    adc_x_up = False
