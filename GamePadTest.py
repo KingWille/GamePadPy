@@ -19,6 +19,10 @@ swt_channel = 0
 vrx_channel = 1
 vry_channel = 2
 
+swt_channel1 = 3
+vrx_channel1 = 4
+vry_channel1 = 5
+
 
  
 # Read switch state
@@ -54,7 +58,8 @@ GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP) #LSB
 device = uinput.Device([uinput.KEY_UP,uinput.KEY_DOWN,uinput.KEY_LEFT,uinput.KEY_RIGHT,
                         uinput.KEY_X, uinput.KEY_ENTER,uinput.KEY_J,uinput.KEY_K, uinput.KEY_L,
                         uinput.KEY_H, uinput.KEY_I, uinput.KEY_O, uinput.KEY_Y,uinput.KEY_M,
-                        uinput.KEY_A, uinput.KEY_B,uinput.KEY_C, uinput.KEY_V, uinput.KEY_N,uinput.ABS_X, uinput.ABS_Y])
+                        uinput.KEY_A, uinput.KEY_B,uinput.KEY_C, uinput.KEY_V, uinput.KEY_N, 
+                        uinput.KEY_W, uinput.KEY_S, uinput.KEY_D, uinput.KEY_F, uinput.ABS_X, uinput.ABS_Y])
 
 fire = False
 up = False
@@ -67,6 +72,7 @@ start = False
 select = False
 touch = False
 
+#Main JS
 js0x = 0
 js0y = 0
 
@@ -82,6 +88,23 @@ adc_y_down = False
 adc_x_up = False
 adc_x_down = False
 
+#c-stick
+js0x1 = 0
+js0y1 = 0
+
+js0xs1 = True
+js0ys1 = True
+js0ysu1 = True
+js0xsu1 = True
+
+
+adc_y_up1 = False
+adc_y_down1 = False
+
+adc_x_up1 = False
+adc_x_down1 = False
+
+
 rsb = False
 lsb = False
 
@@ -90,6 +113,8 @@ while True:
   # Read the joystick position data
   vrx_pos = ReadChannel(vrx_channel)
   vry_pos = ReadChannel(vry_channel)
+  vrx1_pos = ReadChannel(vrx1_channel)
+  vry1_pos = ReadChannel(vry1_channel)
 
   if 300 <= vrx_pos <= 700:
    adc_x_up = False
@@ -110,6 +135,27 @@ while True:
   elif vry_pos <= 300:
    adc_y_up = False
    adc_y_down = True   
+    
+  #C-stick
+  if 300 <= vrx_pos1 <= 700:
+   adc_x_up1 = False
+   adc_x_down1 = False 
+  elif vrx_pos1 > 700:
+   adc_x_up1 = True
+   adc_x_down1 = False
+  elif vrx_pos1 < 300:
+   adc_x_up1 = False
+   adc_x_down1 = True
+
+  if 300 <= vry_pos1 <= 700:
+   adc_y_up1 = False
+   adc_y_down1 = False
+  elif vry_pos1 > 700:
+   adc_y_up1 = True
+   adc_y_down1 = False
+  elif vry_pos1 <= 300:
+   adc_y_up1 = False
+   adc_y_down1 = True     
 
 
 
@@ -156,6 +202,41 @@ while True:
     device.emit(uinput.KEY_LEFT, 0) # Release Left Ctrl key
     #print("js0 x left release")
 
+  #C-stick  
+  if (not js0ys1) and adc_y_up1:  # Fire button pressed
+    js0ys1 = True
+    #print("js0 y up")
+    device.emit(uinput.KEY_W, 1) # Press Left Ctrl key
+  elif js0ys1 and (not adc_y_up1):  # Fire button released
+    js0ys1 = False
+    device.emit(uinput.KEY_W, 0) # Release Left Ctrl key
+    #print("js0 y up release")
+  elif (not js0y1) and adc_y_down1:  # Fire button pressed
+    js0y1 = True
+    #print("js0 y down")
+    device.emit(uinput.KEY_S, 1) # Press Left Ctrl key
+  elif js0y1 and (not adc_y_down1):  # Fire button released
+    js0y1 = False
+    device.emit(uinput.KEY_S, 0) # Release Left Ctrl key
+    #print("js0 y down release")
+
+
+  if (not js0xs1) and adc_x_up1:  # Fire button pressed
+    js0xs1 = True
+    #print("js0 x right")
+    device.emit(uinput.KEY_F 1) # Press Left Ctrl key
+  elif js0xs1 and (not adc_x_up1):  # Fire button released
+    js0xs1 = False
+    device.emit(uinput.KEY_F, 0) # Release Left Ctrl key
+    #print("js0 x right release")
+  elif (not js0x1) and adc_x_down1:  # Fire button pressed
+    js0x1 = True
+    #print("js0 x left")
+    device.emit(uinput.KEY_D, 1) # Press Left Ctrl key
+  elif js0x1 and (not adc_x_down1):  # Fire button released
+    js0x1 = False
+    device.emit(uinput.KEY_D, 0) # Release Left Ctrl key
+    #print("js0 x left release")
 
 
 
