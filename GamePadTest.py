@@ -224,7 +224,7 @@ while True:
   if (not js0xs1) and adc_x_up1:  # Fire button pressed
     js0xs1 = True
     #print("js0 x right")
-    device.emit(uinput.KEY_F 1) # Press Left Ctrl key
+    device.emit(uinput.KEY_F, 1) # Press Left Ctrl key
   elif js0xs1 and (not adc_x_up1):  # Fire button released
     js0xs1 = False
     device.emit(uinput.KEY_F, 0) # Release Left Ctrl key
