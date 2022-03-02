@@ -116,8 +116,8 @@ while True:
   vrx_pos1 = ReadChannel(vrx_channel1)
   vry_pos1 = ReadChannel(vry_channel1)
 
-    print(vrxchannel1)
-    print(vry_channel1)
+    print(vrx_pos1)
+    print(vry_pos1)
 
   if 300 <= vrx_pos <= 700:
    adc_x_up = False
