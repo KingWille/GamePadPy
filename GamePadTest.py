@@ -36,7 +36,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(0, GPIO.IN, pull_up_down=GPIO.PUD_UP) #A
+GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP) #A
 GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_UP) #B
 GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_UP) #X
 GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_UP) #Y
@@ -258,13 +258,13 @@ while True:
 
 
 
-  if (not A) and (not GPIO.input(0)):  # A button pressed
+  if (not A) and (not GPIO.input(4)):  # A button pressed
     A = True
     #print("A pressed")
-    device.emit(uinput.KEY_Enter, 1) # Press Left Ctrl key
-  if A and GPIO.input(0):  # A button released
+    device.emit(uinput.KEY_ENTER, 1) # Press Left Ctrl key
+  if A and GPIO.input(4):  # A button released
     A = False
-    device.emit(uinput.KEY_Enter, 0) # Release Left Ctrl key
+    device.emit(uinput.KEY_ENTER, 0) # Release Left Ctrl key
 
 
   if (not B) and (not GPIO.input(20)):  # B button pressed
