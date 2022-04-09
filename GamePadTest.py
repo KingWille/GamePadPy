@@ -50,21 +50,6 @@ GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP) #SELECT
 GPIO.setup(20, GPIO.IN, pull_up_down=GPIO.PUD_UP) #RSB
 GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP) #LSB
 
-#TEST
-GPIO.setup(2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(19, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-#TEST
-
 
 #subprocess.call(["sudo", "shutdown", "-h","now"])
 
@@ -341,104 +326,6 @@ while True:
     #print("select pressed")
     device.emit(uinput.KEY_M, 1) # Press Left key
   if select and GPIO.input(21):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  #TEST
-    
-  if (not select) and (not GPIO.input(2)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(2):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(3)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(3):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(14)):  # Left button pressed
-    select = True
-      #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(14):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(15)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(15):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(7)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(7):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(1)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(1):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(5)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(5):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(6)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(6):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(12)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(12):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(13)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(13):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(19)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(19):  # Left button released
-    select = False
-    device.emit(uinput.KEY_M, 0) # Release Left key
-    
-  if (not select) and (not GPIO.input(26)):  # Left button pressed
-    select = True
-    #print("select pressed")
-    device.emit(uinput.KEY_M, 1) # Press Left key
-  if select and GPIO.input(26):  # Left button released
     select = False
     device.emit(uinput.KEY_M, 0) # Release Left key
     
