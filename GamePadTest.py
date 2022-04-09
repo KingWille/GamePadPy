@@ -354,7 +354,7 @@ while True:
     select = False
     device.emit(uinput.KEY_M, 0) # Release Left key
     
-    if (not select) and (not GPIO.input(3)):  # Left button pressed
+  if (not select) and (not GPIO.input(3)):  # Left button pressed
     select = True
     #print("select pressed")
     device.emit(uinput.KEY_M, 1) # Press Left key
