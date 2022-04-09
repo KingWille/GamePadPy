@@ -48,11 +48,11 @@ GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP) #DPADRIGHT
 
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP) #L1
 GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP) #L2
-GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_UP) #R1
+GPIO.setup(19, GPIO.IN, pull_up_down=GPIO.PUD_UP) #R1
 GPIO.setup(1, GPIO.IN, pull_up_down=GPIO.PUD_UP) #R2
 
 GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP) #START
-GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP) #SELECT
+GPIO.setup(6, GPIO.IN, pull_up_down=GPIO.PUD_UP) #SELECT
 GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_UP) #HOME
 
 GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_UP) #L3
@@ -350,11 +350,11 @@ while True:
     L3 = False
     device.emit(uinput.KEY_C, 0) # Release Left key
     
-  if (not R1) and (not GPIO.input(7)):  # Left button pressed
+  if (not R1) and (not GPIO.input(19)):  # Left button pressed
     R1 = True
     #print("select pressed")
     device.emit(uinput.KEY_V, 1) # Press Left key
-  if R1 and GPIO.input(7):  # Left button released
+  if R1 and GPIO.input(19):  # Left button released
     R1 = False
     device.emit(uinput.KEY_V, 0) # Release Left key
     
